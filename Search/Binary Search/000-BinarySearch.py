@@ -14,7 +14,7 @@ def BinarySearch(arr, target):
     return -1
 
 # Order Agnostic Binary Search
-def BinarySearch(arr, target):
+def OrderAgnosticBS(arr, target):
     start, end = 0, len(arr) - 1
 
     # find array is Sorted Ascending or Descending
