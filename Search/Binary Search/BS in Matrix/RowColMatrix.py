@@ -12,7 +12,7 @@
 def MatrixBS(matrix, target):
     r, c = 0, len(matrix) - 1
 
-    while r < len(matrix) - 1 and c >= 0:
+    while r < len(matrix) and c >= 0:
         if matrix[r][c] == target:
             return [r,c]
         elif matrix[r][c] < target:
