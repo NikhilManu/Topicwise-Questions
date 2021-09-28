@@ -28,27 +28,19 @@ def search(matrix, target):
         else:
             rend = mid
     
-    # Now we have only two rows
-    # Check whether the target is in the col of the 2 rows
-    if matrix[rstart][cmid] == target:
-        return [rstart, cmid]
-    if matrix[rstart + 1][cmid] == target:
-        return [rstart + 1, cmid]
-
-    # Search in 1st Half 
-    if matrix[rstart][cmid - 1] >= target:
-        return BinarySearch(matrix, rstart, 0, cmid - 1, target)
-
-    # Search in 2nd Half
-    if matrix[rstart][cmid + 1] >= target and matrix[rstart][cols - 1] >= target:
+    # Now only Two Rows are remaining for searching the Target  
+    # So now we can split each row into two halfs and perform normal BinarySearch
+        
+    if matrix[rstart][cmid] >= target: # Search in left Side of first Row
+        return BinarySearch(matrix, rstart, 0, cmid, target)
+    
+    elif matrix[rstart][cmid] < target <= matrix[rstart][cols - 1]: # Search in Right Side of first Row
         return BinarySearch(matrix, rstart, cmid + 1, cols - 1, target)
-
-    # Search in the 3rd Half
-    if matrix[rstart + 1][cmid - 1] >= target:
-        return BinarySearch(matrix, rstart + 1, 0, cmid - 1, target)
-
-    # Search in the 4th Half
-    if matrix[rstart] + 1[cmid + 1] >= target:
+    
+    if matrix[rstart + 1][cmid] >= target: # Search in left Side of Second Row
+        return BinarySearch(matrix, rstart + 1, 0, cmid, target)    
+    
+    elif matrix[rstart + 1][cmid] < target: # Search in Right Side of Second Row
         return BinarySearch(matrix, rstart + 1, cmid + 1, cols - 1, target)
 
 # Searching in the row provided
