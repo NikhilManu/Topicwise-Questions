@@ -2,7 +2,7 @@ def CyclicSort(array):
     idx = 0 
     while idx < len(array):
         correctIdx = array[idx] - 1
-        if array[idx] != correctIdx:
+        if array[idx] != array[correctIdx]:
             array[idx], array[correctIdx] = array[correctIdx], array[idx]
         else:
             idx += 1
