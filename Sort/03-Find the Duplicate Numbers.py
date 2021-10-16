@@ -1,4 +1,4 @@
-# 
+# https://leetcode.com/problems/find-the-duplicate-number/
 
 # Time O(N)  
 def findTheDup(array):
