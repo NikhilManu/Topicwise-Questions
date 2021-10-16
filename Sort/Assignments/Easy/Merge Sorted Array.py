@@ -1,8 +1,9 @@
 # https://leetcode.com/problems/merge-sorted-array/
 
 # Since Insertion Sort Works good on Partially sorted data
- 
-#
+# key point to note is the date should be filled from the back 
+
+# Time O(n + m)
 def Merge(nums1, m, nums2, n):
     j = 0
     for i in range(m, len(nums1)):
@@ -22,7 +23,6 @@ def Insertion(arr):
 
 
 # Solution 2
-
 def Merge(nums1, m, nums2, n):
     i, j = m-1, n-1
     k = len(nums1) - 1
@@ -40,6 +40,6 @@ def Merge(nums1, m, nums2, n):
         nums1[k] = nums2[j]
         k -= 1
         j -= 1
-        
+
     return nums1
             
