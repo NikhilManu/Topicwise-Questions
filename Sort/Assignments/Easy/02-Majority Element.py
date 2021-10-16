@@ -1,4 +1,4 @@
-# 
+# https://leetcode.com/problems/majority-element/
 
 # Sorting Algorithm is Easy, just sort and return the element at n/2 position
 
