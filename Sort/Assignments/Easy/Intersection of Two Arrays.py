@@ -12,13 +12,14 @@ def IntersectionOfArray(nums1, nums2):
                 res.append(nums1[i])
             i += 1
             j += 1
-            while i > 0 and i < len(nums1) and nums1[i] == nums1[i - 1]: #
-                i += 1                                                   #  Skipping the Duplicates
-            while j > 0 and j < len(nums2) and nums2[j] == nums2[j - 1]: #
-                j += 1                                                   #
         elif nums1[i] < nums2[j]:
             i += 1
         else:
             j += 1
+            
+        while i > 0 and i < len(nums1) and nums1[i] == nums1[i - 1]: #
+            i += 1                                                   #  Skipping the Duplicates
+        while j > 0 and j < len(nums2) and nums2[j] == nums2[j - 1]: #
+            j += 1                                                   #
             
     return res
