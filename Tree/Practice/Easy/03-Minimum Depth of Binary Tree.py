@@ -2,8 +2,6 @@
 
 # Solution 1 --> DFS Traverses the entire tree, which is waste of time
 # Time O(N) | Space O(h)
-from typing import Deque
-
 
 def minDepth(root):
     return helper(root) if root else 0
