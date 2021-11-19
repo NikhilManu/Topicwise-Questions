@@ -15,7 +15,8 @@ def allPathPrint(maze, row, col, cur, path, step):
         return 
 
     maze[row][col] = False # We make it false because we dont want to revisit this node in current recursive call
-    path[row][col] = step
+    path[row][col] = step 
+    
     if row < len(maze) - 1:
         allPathPrint(maze, row + 1, col, cur + 'D', path, step + 1)
     
@@ -29,7 +30,7 @@ def allPathPrint(maze, row, col, cur, path, step):
         allPathPrint(maze, row, col - 1, cur + 'L', path, step + 1)
 
     maze[row][col] = True # We revert the changes we made before exiting from the current recursive call
-    path[row][col] = 0
+    path[row][col] = 0 
 
     return path
 
