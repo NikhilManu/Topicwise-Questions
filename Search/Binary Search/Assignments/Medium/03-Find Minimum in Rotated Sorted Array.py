@@ -3,7 +3,7 @@
 # Time O(logN) | Space O(1)
 def findMin(nums):
     pivot = findPivot(nums)
-    if pivot == -1:
+    if pivot == -1: # This means that the array is sorted
         return nums[0]
     
     return nums[pivot]
