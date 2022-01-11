@@ -65,3 +65,25 @@ def BinarySearch(arr, target, start, end):
             start = mid + 1
 
     return -1
+
+# Approach 2 --> Find directly by using the fact that one half of the array is always sorted
+
+# Time O(logN) | Space O(1)
+def search(nums, target):
+    start, end = 0, len(nums) - 1
+    while start <= end:
+        mid = start + (end - start) // 2
+        if nums[mid] == target:
+            return mid
+        if nums[start] <= nums[mid]:  # This condtion check if start --> end is sorted or not
+            if nums[start] <= target < nums[mid]:
+                end = mid - 1
+            else:
+                start = mid + 1
+        else:
+            if nums[mid] < target <= nums[end]:
+                start = mid + 1
+            else:
+                end = mid - 1
+        
+    return -1
