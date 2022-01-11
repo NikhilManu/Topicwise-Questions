@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 
+# Approach 1 - Using Pivot
 # Time O(logN) | Space O(1)
 def search(nums, target):
     pivotIdx = findPivot(nums)
@@ -45,5 +46,31 @@ def BinarySearch(arr, target, start, end):
             end = mid - 1
         else:
             start = mid + 1
+
+    return False
+
+# Approach 2 - using the fact one side of the array remains sorted always
+# Time O(log N) | Space O(1)
+def search(nums, target):
+    start, end = 0, len(nums) - 1
+    while start <= end:
+        mid = start + (end - start) // 2
+        
+        if nums[mid] == target:
+            return True
+        
+        while start < mid and nums[start] == nums[mid]:
+            start += 1
+        
+        if nums[start] <= nums[mid]: 
+            if nums[start] <= target < nums[mid]:
+                end = mid - 1
+            else:
+                start = mid + 1
+        else:
+            if nums[mid] < target <= nums[end]:
+                start = mid + 1
+            else:
+                end = mid - 1
 
     return False
