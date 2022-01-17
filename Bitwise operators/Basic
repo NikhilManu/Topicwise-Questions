@@ -1,0 +1,32 @@
+Left Shift:
+---------
+1001 << 1 --> 10010
+
+a << 1 = 2a
+
+a << b = a * 2^b
+
+Right Shift:
+-------
+0011001 >> 1 --> 001100
+
+a >> b = a / (2^b)
+
+Set ith Bit (change it to 1)
+------
+
+OR (with 1) operation with mask
+
+Reset ith Bit (change it to 0)
+------------
+
+AND (with 0) operation with mask
+
+mask = complement(1 << (n - 1))
+
+Find the pos of rightmost Set Bit
+--------------------
+1 0 1 1 0 1 1 0  should return 2 ( since the first 1 is in 2nd pos)
+
+
+
