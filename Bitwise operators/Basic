@@ -28,5 +28,8 @@ Find the pos of rightmost Set Bit
 --------------------
 1 0 1 1 0 1 1 0  should return 2 ( since the first 1 is in 2nd pos)
 
+Find no of digits in base b
+--------------------
+
 
 
